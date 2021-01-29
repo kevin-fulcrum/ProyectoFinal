@@ -3,17 +3,12 @@ import React from 'react';
 import {
   StyleSheet,
 } from 'react-native';
-import Button from './src/component/button/Button'
-
-const styles = StyleSheet.create({
-  
-});
+import Acceso from './src/screens/login/Acceso'
 
 const App = () => {
   return (
-    <Button label={'aceptar'}></Button>
+    <Acceso></Acceso>
   )
 };
-
 
 export default App;
