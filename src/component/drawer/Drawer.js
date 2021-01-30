@@ -3,14 +3,16 @@ import React from 'react'
 import Acceso from '../../screens/login/Acceso';
 import Footer from '../footer/Footer';
 import HomeStack from '../navigation/HomeStack';
+import MenuDrawer from './MenuDrawer';
 
 const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
   return (
-    <Drawer.Navigator initialRouteName={'HomeStack'}>
-      <Drawer.Screen name="Footer" component={Footer} />
-      <Drawer.Screen name="HomeStack" component={HomeStack} />    
+    <Drawer.Navigator initialRouteName={'HomeStack'} drawerStyle={{width:60}} drawerContent={(parameters) => <MenuDrawer {...parameters} /> 
+    }>
+      <Drawer.Screen name="HomeStack" component={HomeStack} />  
+      <Drawer.Screen name="Footer" component={Footer} />  
     </Drawer.Navigator>
 
 
