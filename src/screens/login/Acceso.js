@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
 });
 
 const Acceso = ({navigation}) => {
+  console.warn(navigation)
   return (
     <View style={styles.back}>
     <View style={styles.circulo}></View> 

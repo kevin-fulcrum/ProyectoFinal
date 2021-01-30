@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 const App = () => {
   return (
       <NavigationContainer>
-             <MyDrawer/>
+        <MyDrawer/>
       </NavigationContainer>
   );
   }
