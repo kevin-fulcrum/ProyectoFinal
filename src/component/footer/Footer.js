@@ -11,7 +11,10 @@ import ImageButton from '../imageButton/ImageButton';
 
 const Footer = ({icon}) => {
     const styles = StyleSheet.create({
-        container: {flexDirection:'row'}
+        container: {
+            flexDirection:'row',
+            borderTopWidth: 0.5
+        }
     });  
     return (
         <View style={styles.container}>

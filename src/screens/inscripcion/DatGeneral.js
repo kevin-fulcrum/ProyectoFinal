@@ -10,7 +10,7 @@ import {
 const DatGeneral = () => {
     
     return (
-        <Text>ohkjgkjg</Text>
+        <Text>aqui va los datos generales</Text>
         
   )
 };
