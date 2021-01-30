@@ -6,43 +6,37 @@ import { windowHeight, windowWidth } from '../../resource/Dimensions';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginLeft: -105
+    marginLeft: windowHeight>800 ? -91 : -48
   },
   contentDrawer: {
-    marginTop: 120,
-    justifyContent:'center'
-  },
-  userInfo: {
-    marginLeft: 20,
-  },
-  image: {
-    width: 36,
-    height: 36,
+    marginTop: windowHeight>800 ? 100 : 70,
+    justifyContent:'center',
   },
 });
 
 const MenuDrawer = (props) => {
-
+  const mb = windowHeight>800 ? windowHeight/5.5 : windowHeight/7.5
+  const w = windowHeight>800 ? windowWidth/2 : windowWidth/2.65
   return (
     <View style={styles.container}>
       <DrawerContentScrollView {...props}>
         <View style={styles.contentDrawer}>
           <DrawerItem
-            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:188, width:235 }}
+            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
             label="Home"
             onPress={() => {
               props.navigation.navigate('Dashboard');
             }}
           />
           <DrawerItem
-          style={{backgroundColor:'skyblue', transform:[{rotate:'270deg'}], marginBottom:188, width:235}}
+          style={{backgroundColor:'skyblue', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
             label="My Orders"
             onPress={() => {
               props.navigation.navigate('Orders');
             }}
           />
           <DrawerItem
-          style={{backgroundColor:'green', transform:[{rotate:'270deg'}], marginBottom:188, width:235 }}
+          style={{backgroundColor:'green', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
             label="Logout"
           />
         </View>
