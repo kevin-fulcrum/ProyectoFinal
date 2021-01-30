@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     }
 });
 
-const Acceso = () => {
+const Acceso = ({navigation}) => {
   return (
     <View style={styles.back}>
     <View style={styles.circulo}></View> 
@@ -66,7 +66,7 @@ const Acceso = () => {
     <InputText label={'Password'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></InputText>
     </View>
     <View style={styles.separador}>
-    <Button label={'Login'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></Button>
+    <Button label={'Login'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} onPress={() => navigation.navigate('DatGeneral')}></Button>
     </View>
     </View> 
     </View> 
