@@ -67,7 +67,7 @@ const Acceso = ({navigation}) => {
     <InputText label={'Password'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></InputText>
     </View>
     <View style={styles.separador}>
-    <Button label={'Login'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} onPress={() => navigation.navigate('DatGeneral')}></Button>
+    <Button label={'Login'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} onPress={() => navigation.navigate('PreVisualizacion')}></Button>
     </View>
     </View> 
     </View> 
