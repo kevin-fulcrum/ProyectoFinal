@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   StyleSheet,
@@ -8,16 +7,24 @@ import {
 
 
 
-const App = ({label}) => {
+const App = ({label,windowWidth,windowHeight}) => {
     const styles = StyleSheet.create({
         border:{
-          borderRadius: 20,
-          backgroundColor: 'blue'
+          borderRadius: 10,
+          backgroundColor: '#d75971',
+          width: windowWidth,
+          height: windowHeight,
+          justifyContent: 'center',
+          alignItems: 'center'
+        },
+        texto:{
+          color: '#fcfaf9',
+          fontSize: 16 
         }
       });  
   return (
     <TouchableOpacity style={styles.border}>
-    <Text>{label}</Text>
+    <Text style={styles.texto}>{label}</Text>
     </TouchableOpacity> 
   )
 };
