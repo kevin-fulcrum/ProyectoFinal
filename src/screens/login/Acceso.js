@@ -1,10 +1,12 @@
 import React from 'react';
 import {
   StyleSheet,
+  Text,
   View
 } from 'react-native';
 import Button from '../../component/button/Button'
 import {windowWidth,windowHeight} from '../../resource/Dimensions'
+import InputText from '../../component/inputText/InputText'
 
 const styles = StyleSheet.create({
     back:{
@@ -42,19 +44,33 @@ const styles = StyleSheet.create({
         paddingLeft:50,
         bottom: windowHeight/1.5,
         right: windowWidth/30,
+    },
+    separador:{
+      marginVertical: 15
     }
 });
 
-const App = () => {
+const Acceso = () => {
   return (
     <View style={styles.back}>
     <View style={styles.circulo}></View> 
     <View style={styles.circuloTop}></View>    
-    <View style={styles.container}> 
+    <View style={styles.container}>
+    <View style={styles.separador}>
+    <Text>LOGO</Text>
+    <View style={styles.separador}>
+    </View>
+    <InputText label={'Email'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></InputText>
+    </View>
+    <View style={styles.separador}>
+    <InputText label={'Password'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></InputText>
+    </View>
+    <View style={styles.separador}>
     <Button label={'Login'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></Button>
+    </View>
     </View> 
     </View> 
   )
 };
 
-export default App;
+export default Acceso;

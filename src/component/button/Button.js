@@ -7,7 +7,7 @@ import {
 
 
 
-const App = ({label,windowWidth,windowHeight}) => {
+const Button = ({label,windowWidth,windowHeight}) => {
     const styles = StyleSheet.create({
         border:{
           borderRadius: 10,
@@ -30,4 +30,4 @@ const App = ({label,windowWidth,windowHeight}) => {
 };
 
 
-export default App;
+export default Button;
