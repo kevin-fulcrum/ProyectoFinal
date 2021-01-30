@@ -6,10 +6,10 @@ import { windowHeight, windowWidth } from '../../resource/Dimensions';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginLeft: -223
+    marginLeft: -115
   },
   contentDrawer: {
-    margin: 100,
+    marginTop: 100,
     justifyContent:'center'
   },
   userInfo: {
@@ -28,21 +28,21 @@ const MenuDrawer = (props) => {
       <DrawerContentScrollView {...props}>
         <View style={styles.contentDrawer}>
           <DrawerItem
-            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:223, width:270 }}
+            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:208, width:255 }}
             label="Home"
             onPress={() => {
               props.navigation.navigate('Dashboard');
             }}
           />
           <DrawerItem
-          style={{backgroundColor:'skyblue', transform:[{rotate:'270deg'}], marginBottom:223, width:270}}
+          style={{backgroundColor:'skyblue', transform:[{rotate:'270deg'}], marginBottom:208, width:255}}
             label="My Orders"
             onPress={() => {
               props.navigation.navigate('Orders');
             }}
           />
           <DrawerItem
-          style={{backgroundColor:'green', transform:[{rotate:'270deg'}], marginBottom:223, width:270 }}
+          style={{backgroundColor:'green', transform:[{rotate:'270deg'}], marginBottom:208, width:255 }}
             label="Logout"
           />
         </View>
