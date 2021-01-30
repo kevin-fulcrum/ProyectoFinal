@@ -7,7 +7,7 @@ import {
 
 
 
-const Button = ({label,windowWidth,windowHeight}) => {
+const Button = ({label,windowWidth,windowHeight,onPress}) => {
     const styles = StyleSheet.create({
         border:{
           borderRadius: 10,
@@ -23,7 +23,7 @@ const Button = ({label,windowWidth,windowHeight}) => {
         }
       });  
   return (
-    <TouchableOpacity style={styles.border}>
+    <TouchableOpacity style={styles.border} onPress={onPress}>
     <Text style={styles.texto}>{label}</Text>
     </TouchableOpacity> 
   )
