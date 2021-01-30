@@ -11,8 +11,15 @@ const {height, width} = Dimensions.get('window')
 
 const ImageButton = ({icon}) => {
     const styles = StyleSheet.create({
-        container: { width:width/4, alignItems:'center', },
-        image: {height:30, width:30, }
+    container: {
+        width:width/4,
+        alignItems:'center',
+    },
+    image: {
+        height:30,
+        width:30,
+        marginVertical: 10
+    }
     });  
     return (
         <View style={styles.container}>

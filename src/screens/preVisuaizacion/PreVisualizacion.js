@@ -13,14 +13,19 @@ import Footer from '../../component/footer/Footer'
 const PreVisualizacion = () => {
     const styles = StyleSheet.create({
       containerInit:{
-        flex: 0.4,
-        justifyContent: 'center'
+        flex: 0.48,
+        justifyContent: 'center',
+        paddingLeft: 10,
+        borderWidth: 5
       },
       containerCenter:{
-        flex: 0.4
+        flex: 0.48,
+        justifyContent: 'center',
+        paddingLeft: 10,
+        borderWidth: 5
       },
       containerEnd:{
-        flex: 0.2
+        flex: 0.02
       }
       });  
   return (
@@ -29,6 +34,7 @@ const PreVisualizacion = () => {
     <AgregarFlat windowWidth={150} windowHeight={150}></AgregarFlat> 
     </View>
     <View style={styles.containerCenter}> 
+    <AgregarFlat windowWidth={150} windowHeight={150}></AgregarFlat> 
     </View>
     <View style={styles.containerEnd}></View>
     <Footer></Footer>

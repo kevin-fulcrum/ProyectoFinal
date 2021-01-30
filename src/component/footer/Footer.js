@@ -9,7 +9,7 @@ import ImageButton from '../imageButton/ImageButton';
 
 
 
-const Footer = ({icon}) => {
+const Footer = () => {
     const styles = StyleSheet.create({
         container: {
             flexDirection:'row',
