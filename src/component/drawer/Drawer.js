@@ -9,9 +9,13 @@ const MyDrawer = () => {
   return (
     <Drawer.Navigator initialRouteName={'Article'}>
       <Drawer.Screen name="Footer" component={Footer} />
-      <Drawer.Screen name="Article" component={App} />
+      <Drawer.Screen name="Article" component={App} headerStyle={{transform: { rotate: '90deg'}}} options={{ drawerLabel: 'Home', }}/>
+    
     </Drawer.Navigator>
-  );
+
+
+
+);
 }
 
 export default MyDrawer;
