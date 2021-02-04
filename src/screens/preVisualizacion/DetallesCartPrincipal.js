@@ -20,19 +20,22 @@ const DetallesCartPrincipal = ({navigation}) => {
         justifyContent: 'center',
         alignItems: 'center',
         paddingLeft: 10,
+        backgroundColor: '#ffffff'
       },
       containerCenter:{
         flex: 0.75,
         paddingLeft: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#ffffff'
       },
       containerEnd:{
         flex: 0.10,
         alignContent: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#ffffff'
       },
       categoriaNombre:{
-        marginVertical: 20
+        marginVertical: 20,
       },
       titulo:{
         fontSize: windowWidth/20,
@@ -44,7 +47,7 @@ const DetallesCartPrincipal = ({navigation}) => {
       });
       
       const [response, setResponse] = useState(null);
-      const [titulo, setTitulo] = useState('titulo');
+      const [titulo, setTitulo] = useState('');
       const [descripcion, setDescripcion] = useState('hola');
       const [imagen, setImagen] = useState('')
 
@@ -117,11 +120,11 @@ const DetallesCartPrincipal = ({navigation}) => {
     </View>
     <View style={styles.containerCenter}>
     <View style={styles.categoriaNombre}>
-    <InputText label={'Nombre de Categoria'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} numberOfLines={10} numberOfLines={1}></InputText>
+    <InputText label={'Nombre de Categoria'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} numberOfLines={10} numberOfLines={1} onChangeText={(e) => {setTitulo(e)}}></InputText>
     </View>
     <Text style={styles.agregar}>Agregar una Imagen</Text>
     <View style={styles.categoriaNombre}>
-    {response?
+    {response && response.didCancel===undefined?
     <Image
     style={{width: 200, height: 200}}
     source={{uri: response.uri}}
