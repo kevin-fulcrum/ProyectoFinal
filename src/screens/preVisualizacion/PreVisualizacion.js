@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import AgregarFlat from '../../component/button/AgregarFlat'
 import Footer from '../../component/footer/Footer'
+import {windowWidth,windowHeight} from '../../resource/Dimensions'
 
 
 
@@ -19,13 +20,13 @@ const PreVisualizacion = ({navigation}) => {
         borderWidth: 5
       },
       containerCategori:{
-        flex: 0.25,
+        flex: 0.35,
         justifyContent: 'center',
         paddingLeft: 10,
         borderWidth: 5
       },
       containerCenter:{
-        flex: 0.50,
+        flex: 0.40,
         justifyContent: 'center',
         paddingLeft: 10,
         borderWidth: 5
@@ -42,7 +43,7 @@ const PreVisualizacion = ({navigation}) => {
     </View>
     <View style={styles.containerCategori}>
     <Text></Text>
-    <AgregarFlat windowWidth={70} windowHeight={70} fontSize={30} onPress={() => navigation.navigate('DetallesCartPrincipal')}></AgregarFlat> 
+    <AgregarFlat windowWidth={windowWidth/4} windowHeight={windowHeight/8} fontSize={windowWidth/8} onPress={() => navigation.navigate('DetallesCartPrincipal')}></AgregarFlat> 
     </View>
     <View style={styles.containerCenter}> 
     <AgregarFlat windowWidth={150} windowHeight={150} fontSize={80}></AgregarFlat> 
