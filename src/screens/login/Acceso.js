@@ -61,10 +61,10 @@ const Acceso = ({navigation}) => {
     <Text>LOGO</Text>
     <View style={styles.separador}>
     </View>
-    <InputText label={'Email'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></InputText>
+    <InputText label={'Email'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} numberOfLines={1}></InputText>
     </View>
     <View style={styles.separador}>
-    <InputText label={'Password'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)}></InputText>
+    <InputText label={'Password'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} numberOfLines={1}></InputText>
     </View>
     <View style={styles.separador}>
     <Button label={'Login'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} onPress={() => navigation.navigate('PreVisualizacion')}></Button>

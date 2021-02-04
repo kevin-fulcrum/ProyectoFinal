@@ -7,7 +7,7 @@ import {
 
 
 
-const AgregarFlat = ({windowWidth,windowHeight,onPress}) => {
+const AgregarFlat = ({windowWidth,windowHeight,onPress,fontSize}) => {
     const styles = StyleSheet.create({
         border:{
           borderRadius: 10,
@@ -20,7 +20,7 @@ const AgregarFlat = ({windowWidth,windowHeight,onPress}) => {
         },
         texto:{
           color: 'black',
-          fontSize: 80, 
+          fontSize: fontSize, 
         }
       });  
   return (

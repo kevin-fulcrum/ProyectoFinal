@@ -13,7 +13,7 @@ const Footer = () => {
     const styles = StyleSheet.create({
         container: {
             flexDirection:'row',
-            borderTopWidth: 0.5
+            borderTopWidth: 0.5,
         }
     });  
     return (
