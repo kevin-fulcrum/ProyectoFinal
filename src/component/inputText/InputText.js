@@ -1,14 +1,12 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text,
-  TouchableOpacity,
   TextInput
 } from 'react-native';
 
 
 
-const InputText = ({label,windowWidth,windowHeight}) => {
+const InputText = ({label,windowWidth,windowHeight,numberOfLines}) => {
     const styles = StyleSheet.create({
         border:{
           borderRadius: 10,
@@ -21,7 +19,7 @@ const InputText = ({label,windowWidth,windowHeight}) => {
         },
       });  
   return (
-    <TextInput placeholder={label} style={styles.border}></TextInput> 
+    <TextInput placeholder={label} style={styles.border} numberOfLines={numberOfLines} multiline={true}></TextInput> 
   )
 };
 

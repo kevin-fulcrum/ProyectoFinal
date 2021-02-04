@@ -6,7 +6,7 @@ import { windowHeight, windowWidth } from '../../resource/Dimensions';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginLeft: windowHeight>800 ? -91 : -48
+    marginLeft: windowHeight>800 ? -91 : -65
   },
   contentDrawer: {
     marginTop: windowHeight>800 ? 100 : 70,
