@@ -22,7 +22,7 @@ const MenuDrawer = (props) => {
       <DrawerContentScrollView {...props}>
         <View style={styles.contentDrawer}>
           <DrawerItem
-            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
+            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:mb, width:w, }}          
             label="Home"
             onPress={() => {
               props.navigation.navigate('Dashboard');
