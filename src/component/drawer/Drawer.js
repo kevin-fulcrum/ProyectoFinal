@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
   return (
-    <Drawer.Navigator initialRouteName={'HomeStack'} drawerStyle={{width:45}} drawerContent={(parameters) => <MenuDrawer {...parameters} /> 
+    <Drawer.Navigator initialRouteName={'HomeStack'} edgeWidth={100} drawerStyle={{width:45}} drawerContent={(parameters) => <MenuDrawer {...parameters} /> 
     }>
       <Drawer.Screen name="HomeStack" component={HomeStack} />  
       <Drawer.Screen name="Footer" component={Footer} />  

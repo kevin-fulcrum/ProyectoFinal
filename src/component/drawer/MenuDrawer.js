@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     marginLeft: windowHeight>800 ? -91 : -65
   },
   contentDrawer: {
-    marginTop: windowHeight>800 ? 100 : 70,
+    marginTop: windowHeight>800 ? 90 : 60,
     justifyContent:'center',
   },
 });
