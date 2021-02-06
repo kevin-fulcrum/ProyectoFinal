@@ -22,22 +22,25 @@ const MenuDrawer = (props) => {
       <DrawerContentScrollView {...props}>
         <View style={styles.contentDrawer}>
           <DrawerItem
-            style={{backgroundColor:'blue', transform:[{rotate:'270deg'}], marginBottom:mb, width:w, }}          
-            label="Home"
+            style={{backgroundColor:'#B88F7F', transform:[{rotate:'270deg'}], marginBottom:mb, width:w, }}          
+            label="  Home"
             onPress={() => {
-              props.navigation.navigate('Dashboard');
+              props.navigation.navigate('Welcome');
             }}
           />
           <DrawerItem
           style={{backgroundColor:'skyblue', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
-            label="My Orders"
+            label="  My Orders"
             onPress={() => {
-              props.navigation.navigate('Orders');
+              props.navigation.navigate('Cart');
             }}
           />
           <DrawerItem
-          style={{backgroundColor:'green', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
-            label="Logout"
+          style={{backgroundColor:'#BC83AB', transform:[{rotate:'270deg'}], marginBottom:mb, width:w }}
+            label="  Localizacion"
+            onPress={() => {
+              props.navigation.navigate('Cart');
+            }}
           />
         </View>
       </DrawerContentScrollView>
