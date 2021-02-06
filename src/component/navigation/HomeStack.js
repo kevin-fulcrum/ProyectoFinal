@@ -14,6 +14,7 @@ const HomeStack = () => {
       <Stack.Screen
         name="Splash"
         component={Splash}
+        options={{header: () => null}}
       />
       <Stack.Screen
         name="Welcome"
