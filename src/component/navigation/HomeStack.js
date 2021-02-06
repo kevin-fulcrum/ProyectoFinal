@@ -4,6 +4,8 @@ import Acceso from '../../screens/login/Acceso';
 import DatGeneral from '../../screens/inscripcion/DatGeneral';
 import PreVisualizacion from '../../screens/preVisualizacion/PreVisualizacion'
 import DetallesCartPrincipal from '../../screens/preVisualizacion/DetallesCartPrincipal'
+import ProductDetalle from '../../screens/preVisualizacion/ProductDetalle'
+import Localitation from '../../screens/localitation/Localitation'
 
 const Stack = createStackNavigator();
 
@@ -30,6 +32,16 @@ const HomeStack = () => {
        <Stack.Screen
         name="DetallesCartPrincipal"
         component={DetallesCartPrincipal}
+        options={{header: () => null}}
+      />
+       <Stack.Screen
+        name="ProductDetalle"
+        component={ProductDetalle}
+        options={{header: () => null}}
+      />
+       <Stack.Screen
+        name="Localitation"
+        component={Localitation}
         options={{header: () => null}}
       />
     </Stack.Navigator>
