@@ -19,7 +19,7 @@ const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,item}) =>
           justifyContent: 'center',
           alignItems: 'center',
           borderWidth: 2,
-          marginLeft: 8
+          marginLeft: 10
         },
         texto:{
           color: 'black',
