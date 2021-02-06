@@ -4,6 +4,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  View,
 } from 'react-native';
 
 
@@ -22,23 +23,30 @@ const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,item}) =>
         },
         texto:{
           color: 'black',
-          fontSize: fontSize, 
+          fontSize: fontSize,
+          marginLeft: 15, 
+          fontWeight: 'bold' 
         },
         image:{
           width: windowWidth,
           height: windowHeight,
           position: 'absolute',
           borderRadius: 10,
+        },
+        container:{
+          marginTop: 20
         }
       });  
   return (
+    <View style={styles.container}>
     <TouchableOpacity style={styles.border} onPress={onPress}>
     <Image
     source={{uri: 'data:image/png;base64,'+item.imagen}}
     style={styles.image}
-    />
-    <Text style={styles.texto}>{item.titulo}</Text>
+    />    
     </TouchableOpacity> 
+    <Text style={styles.texto}>{item.titulo}</Text>
+    </View>
   )
 };
 
