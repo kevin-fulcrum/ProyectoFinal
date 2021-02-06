@@ -6,14 +6,20 @@ import PreVisualizacion from '../../screens/preVisualizacion/PreVisualizacion'
 import DetallesCartPrincipal from '../../screens/preVisualizacion/DetallesCartPrincipal'
 import ProductDetalle from '../../screens/preVisualizacion/ProductDetalle'
 import Localitation from '../../screens/localitation/Localitation'
+import Splash from '../../screens/splash/Splash';
 
 const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Acceso"
+      initialRouteName="Splash"
       >
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{header: () => null}}
+      />
       <Stack.Screen
         name="Acceso"
         component={Acceso}

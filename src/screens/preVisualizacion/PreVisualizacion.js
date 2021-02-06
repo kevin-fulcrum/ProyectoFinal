@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
-  Text,
+  TextInput,
   Animated,
   FlatList,
   View,
