@@ -10,6 +10,7 @@ import Footer from '../../component/footer/Footer'
 import {windowWidth,windowHeight} from '../../resource/Dimensions'
 import SliderItemCategory from '../../component/sliderItem/SliderItemCategory'
 import axios from 'axios'
+import SkeletonShimer from '../../component/skeleton/SkeletonShimer'
 
 
 const PreVisualizacion = ({navigation}) => {
@@ -40,7 +41,7 @@ const PreVisualizacion = ({navigation}) => {
       });  
 
       const [data, setData] = useState({});
-      const [a, setA] = useState();
+      const [visible, setVisible] = useState(false);
 
       useEffect(()=>{
         axios.post('http://192.168.1.37:8000/api/token/',{
@@ -51,7 +52,6 @@ const PreVisualizacion = ({navigation}) => {
           (response)=>{
             const auth="Bearer "+response.data.access
             console.warn(auth)
-            setA(auth)
             axios.get('http://192.168.1.37:8000/categorias/',
             {
               headers:{'Authorization ': auth}
@@ -60,6 +60,7 @@ const PreVisualizacion = ({navigation}) => {
             .then(
               (res)=>{
                 setData(res.data)
+                setVisible(true)
               }
             )
             .catch(
@@ -83,7 +84,9 @@ const PreVisualizacion = ({navigation}) => {
     <View style={styles.containerInit}>
     </View>
     <View style={styles.containerCategori}>
-    <Text></Text> 
+    <View style={{flex:1, justifyContent:'flex-end'}}>
+      <SkeletonShimer visible={visible}/>
+    </View>    
     <FlatList 
     data={data}
     keyExtractor={(item, index) => 'key' + index}
@@ -103,6 +106,12 @@ const PreVisualizacion = ({navigation}) => {
     />   
     </View>
     <View style={styles.containerCenter}> 
+    <View style={{flex:1, justifyContent:'center', marginTop:50}}>
+      <SkeletonShimer visible={visible}/>
+    </View> 
+    <View style={{flex:1, justifyContent:'center', marginTop:50}}>
+      <SkeletonShimer visible={visible}/>
+    </View> 
     <FlatList 
     data={data}
     keyExtractor={(item, index) => 'key' + index}

@@ -37,7 +37,7 @@ const Splash = ({navigation}) => {
     }).start();
   }, [moveAnim, fadeAnim]);
   
-  setTimeout(()=>{navigation.navigate('Welcome')}, 3000)
+  setTimeout(()=>{navigation.navigate('PreVisualizacion')}, 3000)
 
   return (
     <SafeAreaView style={styles.container}>
