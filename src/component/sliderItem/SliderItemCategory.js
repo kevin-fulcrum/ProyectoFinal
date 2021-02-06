@@ -27,6 +27,11 @@ const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,item}) =>
           marginLeft: 15, 
           fontWeight: 'bold' 
         },
+        textoPrecio:{
+          color: 'black',
+          fontSize: fontSize,
+          marginLeft: 15, 
+        },
         image:{
           width: windowWidth,
           height: windowHeight,
@@ -34,8 +39,9 @@ const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,item}) =>
           borderRadius: 10,
         },
         container:{
-          marginTop: 20
-        }
+          marginVertical: 20,
+          marginHorizontal: 2,
+        },
       });  
   return (
     <View style={styles.container}>
@@ -46,6 +52,7 @@ const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,item}) =>
     />    
     </TouchableOpacity> 
     <Text style={styles.texto}>{item.titulo}</Text>
+    <Text style={styles.textoPrecio}>{item.precio}</Text>
     </View>
   )
 };

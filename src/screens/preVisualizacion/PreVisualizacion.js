@@ -20,14 +20,14 @@ const PreVisualizacion = ({navigation}) => {
         paddingLeft: 10,
       },
       containerCategori:{
-        flex: 0.35,
+        flex: 0.20,
         justifyContent: 'center',
         paddingLeft: 10,
         flexDirection: 'row',
         alignItems: 'center'
       },
       containerCenter:{
-        flex: 0.40,
+        flex: 0.55,
         justifyContent: 'center',
         paddingLeft: 10,
         flexDirection: 'row',
