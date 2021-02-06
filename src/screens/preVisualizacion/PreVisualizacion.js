@@ -16,36 +16,56 @@ import SkeletonShimer from '../../component/skeleton/SkeletonShimer'
 const PreVisualizacion = ({navigation}) => {
     const styles = StyleSheet.create({
       containerInit:{
-        flex: 0.15,
+        flex: 0.10,
         justifyContent: 'center',
         paddingLeft: 10,
+        backgroundColor: '#d75971',
+      },
+      textCategoria:{
+        marginLeft: 15,
+        fontSize: windowWidth/20,
+        fontWeight: 'bold',
+      },
+      textProductos:{
+        marginLeft: 30,
+        fontSize: windowWidth/25,
+        fontWeight: 'bold',
+      },
+      productos:{
+        backgroundColor: '#d75971',
       },
       containerCategori:{
-        flex: 0.35,
-        justifyContent: 'center',
-        paddingLeft: 10,
-        flexDirection: 'row',
-        alignItems: 'center'
-      },
-      containerCenter:{
-        flex: 0.40,
+        flex: 0.25,
         justifyContent: 'center',
         paddingLeft: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        borderTopWidth: 2,
+        backgroundColor: '#d75971',
+      },
+      containerCenter:{
+        flex: 0.55,
+        justifyContent: 'center',
+        paddingLeft: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderTopWidth: 1,
+        borderLeftWidth: 1,
+        borderRightWidth: 1,
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,
+        backgroundColor: '#ffffff',
       },
       containerEnd:{
         flex: 0.10,
         alignContent: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#ffffff',
       }
       });  
 
       const [data, setData] = useState({});
       const [visible, setVisible] = useState(false);
+      const [visibleProduct, setVisibleProduct] = useState(true);
       const [url, setUrl] = useState('');
 
       useEffect(()=>{
@@ -86,6 +106,7 @@ const PreVisualizacion = ({navigation}) => {
       
       console.warn('data',dataCategory)
       const botonCategoria=(e)=>{
+        setVisibleProduct(false)
         setUrl(e)
         axios.post('http://192.168.1.37:8000/api/token/',{
           "username": 'bryan',
@@ -102,6 +123,7 @@ const PreVisualizacion = ({navigation}) => {
             .then(
               (res)=>{
                 setdataCategory(res.data)
+                setVisibleProduct(true)
               }
             )
             .catch(
@@ -120,8 +142,9 @@ const PreVisualizacion = ({navigation}) => {
 
       const scrollX = new Animated.Value(0);
   return (
-    <>
+    <View style={{flex: 1, backgroundColor: '#d75971',}}>
     <View style={styles.containerInit}>
+      <Text style={styles.textCategoria}>Categorias Disponibles</Text>
     </View>
     <View style={styles.containerCategori}>
     <View style={{}}>
@@ -145,10 +168,13 @@ const PreVisualizacion = ({navigation}) => {
     )}
     />   
     </View>
-    <View style={styles.containerCenter}> 
+    <View style={styles.productos}>
+    <Text style={styles.textProductos}>Lista de Productos</Text>
+    </View>
+    <View style={styles.containerCenter}>
     <View style={{flexDirection: 'column', justifyContent:'center',}}>
-      <SkeletonShimer visible={visible}/>
-      <SkeletonShimer visible={visible}/>
+      <SkeletonShimer visible={visibleProduct}/>
+      <SkeletonShimer visible={visibleProduct}/>
     </View> 
     <FlatList 
     data={dataCategory}
@@ -161,7 +187,7 @@ const PreVisualizacion = ({navigation}) => {
     decelerationRate="fast"
     showsHorizontalScrollIndicator={false}
     renderItem={(item) => {
-        return <SliderItemCategory windowWidth={windowWidth/3.5} windowHeight={windowHeight/6} fontSize={windowWidth/26} item={item.item} onPress={()=>{}}/>;
+        return <SliderItemCategory windowWidth={windowWidth/3.8} windowHeight={windowHeight/6.5} fontSize={windowWidth/26} item={item.item} onPress={()=>{}}/>;
     }}
     onScroll={Animated.event([
         {nativeEvent: {contentOffset: {x: scrollX}}}],
@@ -172,7 +198,7 @@ const PreVisualizacion = ({navigation}) => {
     <View style={styles.containerEnd}>
     <Footer navigation={navigation}></Footer>
     </View>
-    </>
+    </View>
   )
 };
 
