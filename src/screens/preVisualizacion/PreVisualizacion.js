@@ -6,45 +6,65 @@ import {
   FlatList,
   View,
 } from 'react-native';
-import AgregarFlat from '../../component/button/AgregarFlat'
 import Footer from '../../component/footer/Footer'
 import {windowWidth,windowHeight} from '../../resource/Dimensions'
 import SliderItemCategory from '../../component/sliderItem/SliderItemCategory'
 import axios from 'axios'
-
+import AgregarFlat from '../../component/button/AgregarFlat'
 
 const PreVisualizacion = ({navigation}) => {
     const styles = StyleSheet.create({
       containerInit:{
-        flex: 0.15,
+        flex: 0.10,
         justifyContent: 'center',
         paddingLeft: 10,
-        borderWidth: 5
+        backgroundColor: '#d75971',
+      },
+      textCategoria:{
+        marginLeft: 15,
+        fontSize: windowWidth/15,
+        fontWeight: 'bold',
+      },
+      textProductos:{
+        marginLeft: 30,
+        fontSize: windowWidth/20,
+        fontWeight: 'bold',
+      },
+      productos:{
+        backgroundColor: '#d75971',
       },
       containerCategori:{
-        flex: 0.35,
+        flex: 0.25,
         justifyContent: 'center',
         paddingLeft: 10,
-        borderWidth: 5,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#d75971',
       },
       containerCenter:{
-        flex: 0.40,
+        flex: 0.55,
         justifyContent: 'center',
         paddingLeft: 10,
-        borderWidth: 5,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderTopWidth: 1,
+        borderLeftWidth: 1,
+        borderRightWidth: 1,
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        backgroundColor: '#ffffff',
       },
       containerEnd:{
         flex: 0.10,
         alignContent: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#ffffff',
       }
       });  
 
       const [data, setData] = useState({});
+      const [visible, setVisible] = useState(false);
+      const [visibleProduct, setVisibleProduct] = useState(true);
       const [url, setUrl] = useState('');
 
       useEffect(()=>{
@@ -55,6 +75,7 @@ const PreVisualizacion = ({navigation}) => {
           .then(
           (response)=>{
             const auth="Bearer "+response.data.access
+            console.warn(auth)
             axios.get('http://192.168.1.37:8000/categorias/',
             {
               headers:{'Authorization ': auth}
@@ -63,6 +84,7 @@ const PreVisualizacion = ({navigation}) => {
             .then(
               (res)=>{
                 setData(res.data)
+                setVisible(true)
               }
             )
             .catch(
@@ -83,6 +105,7 @@ const PreVisualizacion = ({navigation}) => {
       
       console.warn('data',dataCategory)
       const botonCategoria=(e)=>{
+        setVisibleProduct(false)
         setUrl(e)
         axios.post('http://192.168.1.37:8000/api/token/',{
           "username": 'bryan',
@@ -99,6 +122,7 @@ const PreVisualizacion = ({navigation}) => {
             .then(
               (res)=>{
                 setdataCategory(res.data)
+                setVisibleProduct(true)
               }
             )
             .catch(
@@ -117,10 +141,11 @@ const PreVisualizacion = ({navigation}) => {
 
       const scrollX = new Animated.Value(0);
   return (
-    <>
+    <View style={{flex: 1, backgroundColor: '#d75971',}}>
     <View style={styles.containerInit}>
+      <Text style={styles.textCategoria}>Categorias Disponibles</Text>
     </View>
-    <View style={styles.containerCategori}>
+    <View style={styles.containerCategori}> 
     <AgregarFlat windowWidth={windowWidth/4} windowHeight={windowHeight/8} fontSize={windowWidth/8} onPress={() => navigation.navigate('DetallesCartPrincipal')}></AgregarFlat> 
     <FlatList 
     data={data}
@@ -132,7 +157,7 @@ const PreVisualizacion = ({navigation}) => {
     decelerationRate="fast"
     showsHorizontalScrollIndicator={false}
     renderItem={(item) => {
-        return <SliderItemCategory windowWidth={windowWidth/4} windowHeight={windowHeight/8} fontSize={windowWidth/16} item={item.item} onPress={()=>botonCategoria(item.item.url)}/>;
+        return <SliderItemCategory windowWidth={windowWidth/4} windowHeight={windowHeight/8} fontSize={windowWidth/24} item={item.item} onPress={()=>botonCategoria(item.item.url)}/>;
     }}
     onScroll={Animated.event([
         {nativeEvent: {contentOffset: {x: scrollX}}}],
@@ -140,7 +165,10 @@ const PreVisualizacion = ({navigation}) => {
     )}
     />   
     </View>
-    <View style={styles.containerCenter}> 
+    <View style={styles.productos}>
+    <Text style={styles.textProductos}>Lista de Productos</Text>
+    </View>
+    <View style={styles.containerCenter}>
     <AgregarFlat windowWidth={windowWidth/3.5} windowHeight={windowHeight/6} fontSize={80} onPress={() => navigation.navigate('ProductDetalle',url)}></AgregarFlat>
     <FlatList 
     data={dataCategory}
@@ -152,7 +180,7 @@ const PreVisualizacion = ({navigation}) => {
     decelerationRate="fast"
     showsHorizontalScrollIndicator={false}
     renderItem={(item) => {
-        return <SliderItemCategory windowWidth={windowWidth/3.5} windowHeight={windowHeight/6} fontSize={windowWidth/16} item={item.item} onPress={()=>{}}/>;
+        return <SliderItemCategory windowWidth={windowWidth/3.8} windowHeight={windowHeight/6.5} fontSize={windowWidth/26} item={item.item} onPress={()=>{navigation.navigate('DetalleProducto',item.item)}}/>;
     }}
     onScroll={Animated.event([
         {nativeEvent: {contentOffset: {x: scrollX}}}],
@@ -163,7 +191,7 @@ const PreVisualizacion = ({navigation}) => {
     <View style={styles.containerEnd}>
     <Footer navigation={navigation}></Footer>
     </View>
-    </>
+    </View>
   )
 };
 

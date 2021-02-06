@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
 
 
@@ -16,12 +17,13 @@ const AgregarFlat = ({windowWidth,windowHeight,onPress,fontSize}) => {
           height: windowHeight,
           justifyContent: 'center',
           alignItems: 'center',
-          borderWidth: 2
+          borderWidth: 2,
+          marginBottom: 45
         },
         texto:{
           color: 'black',
           fontSize: fontSize, 
-        }
+        },
       });  
   return (
     <TouchableOpacity style={styles.border} onPress={onPress}>

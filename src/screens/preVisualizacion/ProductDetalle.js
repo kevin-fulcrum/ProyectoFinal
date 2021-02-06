@@ -148,7 +148,7 @@ const ProductDetalle = ({navigation,route}) => {
     <Button label={'Agregar'} windowWidth={(windowWidth/1.8)} windowHeight={(windowHeight/18)} onPress={() => guardar()}></Button> 
     </View>
     <View style={styles.containerEnd}>
-    <Footer></Footer>
+    <Footer navigation={navigation}></Footer>
     </View>
     </>
   )
