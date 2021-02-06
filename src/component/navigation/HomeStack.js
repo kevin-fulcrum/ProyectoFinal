@@ -5,6 +5,7 @@ import Welcome from '../../screens/preVisualizacion/Welcome'
 import PreVisualizacion from '../../screens/preVisualizacion/PreVisualizacion'
 import DettalleProducto from '../../screens/detalle/DetalleProducto';
 import Cart from '../../screens/detalle/Cart';
+import Localitation from '../../screens/localitation/Localitation'
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,11 @@ const HomeStack = () => {
       <Stack.Screen
       name="Cart"
       component={Cart}
+      options={{header: () => null}}
+      />
+      <Stack.Screen
+      name="Localitation"
+      component={Localitation}
       options={{header: () => null}}
       />
     </Stack.Navigator>
