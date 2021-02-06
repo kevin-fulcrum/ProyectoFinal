@@ -187,7 +187,7 @@ const PreVisualizacion = ({navigation}) => {
     decelerationRate="fast"
     showsHorizontalScrollIndicator={false}
     renderItem={(item) => {
-        return <SliderItemCategory windowWidth={windowWidth/3.8} windowHeight={windowHeight/6.5} fontSize={windowWidth/26} item={item.item} onPress={()=>{}}/>;
+        return <SliderItemCategory windowWidth={windowWidth/3.8} windowHeight={windowHeight/6.5} fontSize={windowWidth/26} item={item.item} onPress={()=>{navigation.navigate('DetalleProducto',item.item)}}/>;
     }}
     onScroll={Animated.event([
         {nativeEvent: {contentOffset: {x: scrollX}}}],
