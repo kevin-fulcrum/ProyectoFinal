@@ -2,7 +2,7 @@ import Actions from '../resource/Actions';
 import {combineReducers} from 'redux'
 
 const initialState = {
-  products: [{"pro": "1"}, {"pro": "2"}],
+  products: [],
   errors: '',
 };
 

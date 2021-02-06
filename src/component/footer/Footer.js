@@ -16,9 +16,9 @@ const Footer = ({navigation}) => {
     });  
     return (
         <View style={styles.container}>
-            <ImageButton icon={'https://cdn.icon-icons.com/icons2/2098/PNG/512/list_icon_128825.png'}></ImageButton>
-            <ImageButton icon={'https://cdn.icon-icons.com/icons2/38/PNG/512/star_favorite_5754.png'}></ImageButton>
-            <ImageButton icon={'https://cdn.icon-icons.com/icons2/2098/PNG/512/search_icon_128762.png'}></ImageButton>
+            <ImageButton onPress={() => navigation.navigate('Welcome')} icon={'https://cdn.icon-icons.com/icons2/2098/PNG/512/list_icon_128825.png'}></ImageButton>
+            <ImageButton onPress={() => navigation.navigate('Cart')} icon={'https://cdn.icon-icons.com/icons2/38/PNG/512/star_favorite_5754.png'}></ImageButton>
+            <ImageButton onPress={() => navigation.navigate('Localitation')} icon={'https://cdn.icon-icons.com/icons2/2098/PNG/512/search_icon_128762.png'}></ImageButton>
             <ImageButton onPress={() => navigation.navigate('Localitation')} icon={'https://cdn.icon-icons.com/icons2/2098/PNG/512/map_pin_icon_128819.png'}></ImageButton>
         </View>
     )
