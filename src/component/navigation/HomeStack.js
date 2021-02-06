@@ -1,47 +1,17 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Acceso from '../../screens/login/Acceso';
-import DatGeneral from '../../screens/inscripcion/DatGeneral';
-import PreVisualizacion from '../../screens/preVisualizacion/PreVisualizacion'
-import DetallesCartPrincipal from '../../screens/preVisualizacion/DetallesCartPrincipal'
-import ProductDetalle from '../../screens/preVisualizacion/ProductDetalle'
-import Localitation from '../../screens/localitation/Localitation'
+import Splash from '../../screens/splash/Splash';
 
 const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Acceso"
+      initialRouteName="Splash"
       >
       <Stack.Screen
-        name="Acceso"
-        component={Acceso}
-        options={{header: () => null}}
-      />
-      <Stack.Screen
-        name="DatGeneral"
-        component={DatGeneral}
-        options={{header: () => null}}
-      />
-      <Stack.Screen
-        name="PreVisualizacion"
-        component={PreVisualizacion}
-        options={{header: () => null}}
-      />
-       <Stack.Screen
-        name="DetallesCartPrincipal"
-        component={DetallesCartPrincipal}
-        options={{header: () => null}}
-      />
-       <Stack.Screen
-        name="ProductDetalle"
-        component={ProductDetalle}
-        options={{header: () => null}}
-      />
-       <Stack.Screen
-        name="Localitation"
-        component={Localitation}
+        name="Splash"
+        component={Splash}
         options={{header: () => null}}
       />
     </Stack.Navigator>
