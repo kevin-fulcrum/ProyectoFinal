@@ -4,6 +4,7 @@ import Splash from '../../screens/splash/Splash';
 import Welcome from '../../screens/preVisualizacion/Welcome'
 import PreVisualizacion from '../../screens/preVisualizacion/PreVisualizacion'
 import DettalleProducto from '../../screens/detalle/DetalleProducto';
+import Cart from '../../screens/detalle/Cart';
 
 const Stack = createStackNavigator();
 
@@ -31,7 +32,12 @@ const HomeStack = () => {
       name="DetalleProducto"
       component={DettalleProducto}
       options={{header: () => null}}
-    />
+      />
+      <Stack.Screen
+      name="Cart"
+      component={Cart}
+      options={{header: () => null}}
+      />
     </Stack.Navigator>
   );
 };
