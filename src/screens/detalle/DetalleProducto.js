@@ -80,7 +80,7 @@ const DettalleProducto=({navigation, route})=>{
         <Text style={styles.textoDetalle}>{route.params.descripcion}</Text>
         </View>
         <View style={styles.botones}>
-        <Button label={'Order Now'} windowHeight={50} windowWidth={150} onPress={()=>{}}></Button>
+        <Button label={'Order Now'} windowHeight={50} windowWidth={150} onPress={()=>{orderFun()}}></Button>
         </View>
     </View>
     </View>
