@@ -10,6 +10,7 @@ import Footer from '../../component/footer/Footer'
 import {windowWidth,windowHeight} from '../../resource/Dimensions'
 import SliderItemCategory from '../../component/sliderItem/SliderItemCategory'
 import axios from 'axios'
+import SkeletonShimer from '../../component/skeleton/SkeletonShimer'
 
 
 const PreVisualizacion = ({navigation}) => {
@@ -44,6 +45,7 @@ const PreVisualizacion = ({navigation}) => {
       });  
 
       const [data, setData] = useState({});
+      const [visible, setVisible] = useState(false);
       const [url, setUrl] = useState('');
 
       useEffect(()=>{
@@ -54,6 +56,7 @@ const PreVisualizacion = ({navigation}) => {
           .then(
           (response)=>{
             const auth="Bearer "+response.data.access
+            console.warn(auth)
             axios.get('http://192.168.1.37:8000/categorias/',
             {
               headers:{'Authorization ': auth}
@@ -62,6 +65,7 @@ const PreVisualizacion = ({navigation}) => {
             .then(
               (res)=>{
                 setData(res.data)
+                setVisible(true)
               }
             )
             .catch(
@@ -120,6 +124,9 @@ const PreVisualizacion = ({navigation}) => {
     <View style={styles.containerInit}>
     </View>
     <View style={styles.containerCategori}>
+    <View style={{}}>
+      <SkeletonShimer visible={visible}/>
+    </View>    
     <FlatList 
     data={data}
     keyExtractor={(item, index) => 'key' + index}
@@ -139,6 +146,10 @@ const PreVisualizacion = ({navigation}) => {
     />   
     </View>
     <View style={styles.containerCenter}> 
+    <View style={{flexDirection: 'column', justifyContent:'center',}}>
+      <SkeletonShimer visible={visible}/>
+      <SkeletonShimer visible={visible}/>
+    </View> 
     <FlatList 
     data={dataCategory}
     keyExtractor={(item, index) => 'key' + index}
