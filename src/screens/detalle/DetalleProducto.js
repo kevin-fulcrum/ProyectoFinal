@@ -3,7 +3,7 @@ import {Text, StyleSheet,View,Image} from 'react-native'
 import {windowWidth,windowHeight} from '../../resource/Dimensions'
 import Button from '../../component/button/Button'
 import {useDispatch} from 'react-redux'
-import Action from '../redux/Action'
+import Action from '../../redux/Action'
 
 const styles=StyleSheet.create({
     container: {
