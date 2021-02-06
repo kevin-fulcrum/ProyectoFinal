@@ -57,7 +57,7 @@ const DettalleProducto=(/*{navigation, route}*/)=>{
     <View style={styles.container}>
         <View style={styles.image}>
         <Image
-        style={{width:350, height:350}}
+        style={{width:350, height:280}}
         source={{uri: 'https://cdn.dribbble.com/users/3862493/screenshots/14876801/media/1d266532827556906e7ea57c80b62cf8.png?compress=1&resize=1000x750' /*route.params.url*/}}
         />     
         </View>
