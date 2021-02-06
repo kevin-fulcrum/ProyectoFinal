@@ -3,12 +3,12 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Image
+  Image,
 } from 'react-native';
 
 
 
-const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,titulo,item}) => {
+const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,item}) => {
     const styles = StyleSheet.create({
         border:{
           borderRadius: 10,
@@ -17,24 +17,27 @@ const SliderItemCategory = ({windowWidth,windowHeight,onPress,fontSize,titulo,it
           height: windowHeight,
           justifyContent: 'center',
           alignItems: 'center',
-          borderWidth: 2
+          borderWidth: 2,
+          marginLeft: 8
         },
         texto:{
           color: 'black',
           fontSize: fontSize, 
         },
         image:{
-           width: 20,
-           height: 20,  
+          width: windowWidth,
+          height: windowHeight,
+          position: 'absolute',
+          borderRadius: 10,
         }
       });  
   return (
     <TouchableOpacity style={styles.border} onPress={onPress}>
-    <Text style={styles.texto}>{item.titulo}</Text>
     <Image
     source={{uri: 'data:image/png;base64,'+item.imagen}}
     style={styles.image}
     />
+    <Text style={styles.texto}>{item.titulo}</Text>
     </TouchableOpacity> 
   )
 };

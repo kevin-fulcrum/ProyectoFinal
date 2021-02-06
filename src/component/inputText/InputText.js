@@ -6,7 +6,7 @@ import {
 
 
 
-const InputText = ({label,windowWidth,windowHeight,numberOfLines,onChangeText}) => {
+const InputText = ({label,windowWidth,windowHeight,numberOfLines,onChangeText,keyboardType}) => {
     const styles = StyleSheet.create({
         border:{
           borderRadius: 10,
@@ -19,7 +19,7 @@ const InputText = ({label,windowWidth,windowHeight,numberOfLines,onChangeText}) 
         },
       });  
   return (
-    <TextInput placeholder={label} style={styles.border} numberOfLines={numberOfLines} multiline={true} onChangeText={onChangeText}></TextInput> 
+    <TextInput keyboardType={keyboardType} placeholder={label} style={styles.border} numberOfLines={numberOfLines} multiline={true} onChangeText={onChangeText}></TextInput> 
   )
 };
 

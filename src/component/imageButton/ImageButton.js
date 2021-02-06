@@ -9,7 +9,7 @@ import {
 
 const {height, width} = Dimensions.get('window')
 
-const ImageButton = ({icon}) => {
+const ImageButton = ({icon,onPress}) => {
     const styles = StyleSheet.create({
     container: {
         width:width/4,
@@ -23,7 +23,7 @@ const ImageButton = ({icon}) => {
     });  
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPress}>
                 <Image style={styles.image} source={{uri: icon}}></Image>
             </TouchableOpacity> 
         </View>
